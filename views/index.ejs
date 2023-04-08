@@ -64,9 +64,21 @@
                         a.setAttribute("href", `https://www.reddit.com/${post.data.permalink}`);
                         a.setAttribute("target", "_blank");
                         const p = document.createElement('p');
-                        p.innerHTML = `<b>Author:</b> ${post.data.author}
+                        p.innerHTML = `<img src=${post.data.url} alt=${post.data.title} height=500 width=300/>
                         <br>
-                        <b>Subreddit:</b> ${post.data.subreddit}`;
+                        <b>Author:</b> ${post.data.author}
+                        <br>
+                        <b>Subreddit:</b> ${post.data.subreddit}
+                        <br>
+                        <b>Upvotes:</b> ${post.data.ups}
+                        <br>
+                        <b>Downvotes:</b> ${post.data.downs}
+                        <br>
+                        <b>Flair:</b> ${post.data.link_flair_text}
+                        <br>
+                        <b>Is it spoiler:</b> ${post.data.spoiler}
+                        <br>
+                        <b>Is it for age > 18:</b> ${post.data.over_18}`;
                         div.append(p);
                         const hr = document.createElement('hr');
                         div.append(hr);
