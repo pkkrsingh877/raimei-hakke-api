@@ -14,6 +14,10 @@
             <label for="limit" class="form-label">Limit</label>
             <input type="number" class="form-control" id="limit" placeholder="10" value="10">
         </div>
+        <div class="mb-3">
+            <label for="sort" class="form-label">Sort</label>
+            <input type="text" class="form-control" id="sort" placeholder="relevance, hot, top, new, comments" value="hot">
+        </div>
         <button class="btn btn-warning" type="submit">Search</button>
     </form>
     <h1 class="heading-1">Search Results</h1>
@@ -37,9 +41,10 @@
             const searchKeyword = document.querySelector('#searchKeyword').value;
             const subreddit = document.querySelector('#subreddit').value;
             const limit = document.querySelector("#limit").value;
+            const sort = document.querySelector('#sort').value;
 
             // Construct the API endpoint URL
-            const url = `https://www.reddit.com/r/${subreddit}/search.json?q=${searchKeyword}&limit=${limit}`;
+            const url = `https://www.reddit.com/r/${subreddit}/search.json?q=${searchKeyword}&limit=${limit}&sort=${sort}`;
 
             // Make a GET request to the endpoint using fetch()
             fetch(url)
