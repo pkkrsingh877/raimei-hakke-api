@@ -4,7 +4,7 @@
     <form id="form">
         <div class="mb-3">
             <label for="searchKeyword" class="form-label">Search Keyword</label>
-            <input type="text" class="form-control" id="searchKeyword" value="nico olivia" required>
+            <input type="text" class="form-control" id="searchKeyword" value="one piece chapter 1080" required>
         </div>
         <div class="mb-3">
             <label for="subreddit" class="form-label">Subname</label>
@@ -53,13 +53,18 @@
                         const div = document.createElement('div');
                         const h2 = document.createElement('h2');
                         div.append(h2);
-                        const hr = document.createElement('hr');
-                        div.append(hr);
                         const a = document.createElement('a');
                         h2.append(a);
                         a.append(`${post.data.title}`);
                         a.setAttribute("href", `https://www.reddit.com/${post.data.permalink}`);
                         a.setAttribute("target", "_blank");
+                        const p = document.createElement('p');
+                        p.innerHTML = `<b>Author:</b> ${post.data.author}
+                        <br>
+                        <b>Subreddit:</b> ${post.data.subreddit}`;
+                        div.append(p);
+                        const hr = document.createElement('hr');
+                        div.append(hr);
                         section.append(div);
                     });
                 })
